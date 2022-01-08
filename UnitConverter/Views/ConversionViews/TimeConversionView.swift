@@ -49,7 +49,7 @@ struct TimeConversionView: View {
                 return "Error"
             }
         }
-        return "\(output) \(outputUnit)"
+        return "\(output.formatted(.number)) \(outputUnit)"
     }
     
     var body: some View {

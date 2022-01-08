@@ -53,7 +53,7 @@ struct VolumeConversionView: View {
                 return "Error"
             }
         }
-        return "\(output) \(outputUnit)"
+        return "\(output.formatted(.number)) \(outputUnit)"
 
     }
     

@@ -15,9 +15,9 @@ struct TemperatureConversionView: View {
     
     var outputTemp: String {
         if inputSelection == 0 {
-            return "\(String((temperatureInput * 1.8) + 32)) ˚F"
+            return "\(((temperatureInput * 1.8) + 32).formatted(.number)) ˚F"
         } else if inputSelection == 1 {
-            return "\(String((temperatureInput - 32) / (1.8))) ˚C"
+            return "\(((temperatureInput - 32) / 1.8).formatted(.number)) ˚C"
         } else {
             return "Error"
         }
