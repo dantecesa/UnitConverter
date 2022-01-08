@@ -8,35 +8,35 @@
 import SwiftUI
 
 struct TimeConversionView: View {
-    @State var inputTime: Double = 60
-    @FocusState var inputTimeFocused: Bool
     let timeTypes: [String] = ["seconds", "minutes", "hours", "days"]
-    @State var inputTimeType: Int = 0
-    @State var outputTimeType: Int = 1
+    @State var timeInput: Double = 60
+    @FocusState var timeInputFocused: Bool
+    @State var inputSelection: Int = 0
+    @State var outputSelection: Int = 1
     
     var outputTime: String {
         var output: Double
-        let outputUnit = timeTypes[outputTimeType]
+        let outputUnit = timeTypes[outputSelection]
         
-        if inputTimeType == outputTimeType {
-            output = inputTime
+        if inputSelection == outputSelection {
+            output = timeInput
         } else {
             var timeInSeconds: Double = 0
             
-            switch inputTimeType {
+            switch inputSelection {
             case 0:
-                timeInSeconds = inputTime
+                timeInSeconds = timeInput
             case 1: // minutes
-                timeInSeconds = inputTime * 60
+                timeInSeconds = timeInput * 60
             case 2: // hours
-                timeInSeconds = inputTime * 3600
+                timeInSeconds = timeInput * 3600
             case 3: // days
-                timeInSeconds = inputTime * 86400
+                timeInSeconds = timeInput * 86400
             default:
                 print("Something went wrong")
             }
             
-            switch outputTimeType {
+            switch outputSelection {
             case 0: // seconds
                 output = timeInSeconds
             case 1: // minutes
@@ -54,15 +54,14 @@ struct TimeConversionView: View {
     
     var body: some View {
         Form {
-            InputView(conversionType: "Time", possibleConversionTypes: timeTypes, userInput: $inputTime, userInputFocus: _inputTimeFocused, userSelectedConversion: $inputTimeType)
+            InputView(conversionType: "Time", possibleConversionTypes: timeTypes, userInput: $timeInput, userInputFocus: _timeInputFocused, userSelectedConversion: $inputSelection)
             
-            ComplexOutputView(output: outputTime, types: timeTypes, outputSelection: $outputTimeType)
-            
+            OutputView(output: outputTime, types: timeTypes, outputSelection: $outputSelection, hasOutputPicker: true)
         }.navigationTitle("Time Converter").navigationBarTitleDisplayMode(.inline).toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
                 Button("Done") {
-                    inputTimeFocused = false
+                    timeInputFocused = false
                 }
             }
         }

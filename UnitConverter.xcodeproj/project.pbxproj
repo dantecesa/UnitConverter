@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6B62E6202787D10A009E2EB0 /* VolumeConversionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B62E61F2787D10A009E2EB0 /* VolumeConversionView.swift */; };
-		6B62E6222787E0AC009E2EB0 /* ComplexOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B62E6212787E0AC009E2EB0 /* ComplexOutputView.swift */; };
+		6B62E6222787E0AC009E2EB0 /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B62E6212787E0AC009E2EB0 /* OutputView.swift */; };
 		6B9E483E27866B5C00CCFDE9 /* UnitConverterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E483D27866B5C00CCFDE9 /* UnitConverterApp.swift */; };
 		6B9E484027866B5C00CCFDE9 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E483F27866B5C00CCFDE9 /* WelcomeView.swift */; };
 		6B9E484227866B5D00CCFDE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B9E484127866B5D00CCFDE9 /* Assets.xcassets */; };
@@ -16,13 +16,12 @@
 		6B9E484C27866D7200CCFDE9 /* TemperatureConversionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E484B27866D7200CCFDE9 /* TemperatureConversionView.swift */; };
 		6B9E484E2786A83500CCFDE9 /* LengthConversionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E484D2786A83500CCFDE9 /* LengthConversionView.swift */; };
 		6B9E48502786B36800CCFDE9 /* TimeConversionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E484F2786B36800CCFDE9 /* TimeConversionView.swift */; };
-		6B9E48522786B45B00CCFDE9 /* SimpleOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E48512786B45B00CCFDE9 /* SimpleOutputView.swift */; };
 		6B9E48542786B76000CCFDE9 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E48532786B76000CCFDE9 /* InputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6B62E61F2787D10A009E2EB0 /* VolumeConversionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeConversionView.swift; sourceTree = "<group>"; };
-		6B62E6212787E0AC009E2EB0 /* ComplexOutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexOutputView.swift; sourceTree = "<group>"; };
+		6B62E6212787E0AC009E2EB0 /* OutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputView.swift; sourceTree = "<group>"; };
 		6B9E483A27866B5C00CCFDE9 /* UnitConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B9E483D27866B5C00CCFDE9 /* UnitConverterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConverterApp.swift; sourceTree = "<group>"; };
 		6B9E483F27866B5C00CCFDE9 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -31,7 +30,6 @@
 		6B9E484B27866D7200CCFDE9 /* TemperatureConversionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureConversionView.swift; sourceTree = "<group>"; };
 		6B9E484D2786A83500CCFDE9 /* LengthConversionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengthConversionView.swift; sourceTree = "<group>"; };
 		6B9E484F2786B36800CCFDE9 /* TimeConversionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConversionView.swift; sourceTree = "<group>"; };
-		6B9E48512786B45B00CCFDE9 /* SimpleOutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleOutputView.swift; sourceTree = "<group>"; };
 		6B9E48532786B76000CCFDE9 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,10 +84,8 @@
 			children = (
 				6B9E483F27866B5C00CCFDE9 /* WelcomeView.swift */,
 				6B9E48532786B76000CCFDE9 /* InputView.swift */,
-				6B9E48512786B45B00CCFDE9 /* SimpleOutputView.swift */,
-				6B62E6212787E0AC009E2EB0 /* ComplexOutputView.swift */,
+				6B62E6212787E0AC009E2EB0 /* OutputView.swift */,
 				6BF0F6992787C4FA00A0D702 /* ConversionViews */,
-				6BF0F69A2787C52E00A0D702 /* Unused */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -103,13 +99,6 @@
 				6B62E61F2787D10A009E2EB0 /* VolumeConversionView.swift */,
 			);
 			path = ConversionViews;
-			sourceTree = "<group>";
-		};
-		6BF0F69A2787C52E00A0D702 /* Unused */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Unused;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,13 +173,12 @@
 			files = (
 				6B9E484E2786A83500CCFDE9 /* LengthConversionView.swift in Sources */,
 				6B9E48542786B76000CCFDE9 /* InputView.swift in Sources */,
-				6B62E6222787E0AC009E2EB0 /* ComplexOutputView.swift in Sources */,
+				6B62E6222787E0AC009E2EB0 /* OutputView.swift in Sources */,
 				6B9E484027866B5C00CCFDE9 /* WelcomeView.swift in Sources */,
 				6B9E484C27866D7200CCFDE9 /* TemperatureConversionView.swift in Sources */,
 				6B9E48502786B36800CCFDE9 /* TimeConversionView.swift in Sources */,
 				6B9E483E27866B5C00CCFDE9 /* UnitConverterApp.swift in Sources */,
 				6B62E6202787D10A009E2EB0 /* VolumeConversionView.swift in Sources */,
-				6B9E48522786B45B00CCFDE9 /* SimpleOutputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

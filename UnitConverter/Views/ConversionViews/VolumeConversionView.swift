@@ -7,16 +7,13 @@
 
 import SwiftUI
 
-/*
- milliliters, liters, cups, pints, or gallons
- */
-
 struct VolumeConversionView: View {
+    var volumeTypes: [String] = ["mL", "liters", "cups", "pints", "gallons"]
     @State var volumeInput: Double = 1
     @FocusState var volumeInputFocused: Bool
-    var volumeTypes: [String] = ["milliliters", "liters", "cups", "pints", "gallons"]
     @State var volumeInputSelection: Int = 1
     @State var volumeOutputSelection: Int = 2
+    
     var volumeOutput: String {
         var output: Double
         let outputUnit = volumeTypes[volumeOutputSelection]
@@ -64,7 +61,7 @@ struct VolumeConversionView: View {
         Form {
             InputView(conversionType: "Volume", possibleConversionTypes: volumeTypes, userInput: $volumeInput, userInputFocus: _volumeInputFocused, userSelectedConversion: $volumeInputSelection)
             
-            ComplexOutputView(output: volumeOutput, types: volumeTypes, outputSelection: $volumeOutputSelection)
+            OutputView(output: volumeOutput, types: volumeTypes, outputSelection: $volumeOutputSelection, hasOutputPicker: true)
             
         }.navigationTitle("Volume Converter").navigationBarTitleDisplayMode(.inline).toolbar {
             ToolbarItemGroup (placement: .keyboard) {

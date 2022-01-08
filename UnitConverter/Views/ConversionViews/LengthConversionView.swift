@@ -13,6 +13,7 @@ struct LengthConversionView: View {
     @FocusState var lengthInputFocused: Bool
     @State var inputSelection: Int = 1
     @State var outputSelection: Int = 0
+    
     var outputLength: String {
         var output: Double
         let outputUnit: String = conversionTypes[outputSelection]
@@ -59,7 +60,7 @@ struct LengthConversionView: View {
         Form {
             InputView(conversionType: "Length", possibleConversionTypes: conversionTypes, userInput: $lengthInput, userInputFocus: _lengthInputFocused, userSelectedConversion: $inputSelection)
             
-            ComplexOutputView(output: outputLength, types: conversionTypes, outputSelection: $outputSelection)
+            OutputView(output: outputLength, types: conversionTypes, outputSelection: $outputSelection, hasOutputPicker: true)
         }.navigationTitle("Length Converter").navigationBarTitleDisplayMode(.inline).toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
@@ -73,6 +74,6 @@ struct LengthConversionView: View {
 
 struct LengthConversionView_Previews: PreviewProvider {
     static var previews: some View {
-        LengthConversionView(lengthInput: 5)
+        LengthConversionView()
     }
 }
