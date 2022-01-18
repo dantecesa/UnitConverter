@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct WelcomeView: View {
-    var supportedConversions: [(String, AnyView)] = [
-        ("Temperature", AnyView(TemperatureConversionView())),
-        ("Length", AnyView(LengthConversionView())),
-        ("Time", AnyView(TimeConversionView())),
-        ("Volume", AnyView(VolumeConversionView()))]
+    var supportedConversions: [(String, NavigationItem, AnyView)] = [
+        ("Temperature", .temperature, AnyView(TemperatureConversionView())),
+        ("Length", .length, AnyView(LengthConversionView())),
+        ("Time", .time, AnyView(TimeConversionView())),
+        ("Volume", .volume, AnyView(VolumeConversionView()))]
+    @State var navigatedItem: NavigationItem? = .temperature
+    
+    enum NavigationItem {
+        case temperature
+        case length
+        case time
+        case volume
+    }
     
     var body: some View {
         NavigationView {
@@ -20,8 +28,12 @@ struct WelcomeView: View {
                 Section {
                     ForEach(0..<supportedConversions.count) { index in
                         let tuple = supportedConversions[index]
-                        
-                        NavigationLink(destination: tuple.1, label: { Text("\(tuple.0)")})
+                    
+                        NavigationLink(tag: tuple.1,
+                                       selection: $navigatedItem,
+                                       destination: { tuple.2 },
+                                       label: { Text("\(tuple.0)") }
+                        )
                     }
                 }
             }.navigationTitle("UnitConverter")
