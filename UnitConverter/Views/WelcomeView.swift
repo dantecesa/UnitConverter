@@ -13,7 +13,7 @@ struct WelcomeView: View {
         ("Length", .length, AnyView(LengthConversionView())),
         ("Time", .time, AnyView(TimeConversionView())),
         ("Volume", .volume, AnyView(VolumeConversionView()))]
-    @State var navigatedItem: NavigationItem? = .temperature
+    @State var navigatedItem: NavigationItem?
     
     enum NavigationItem {
         case temperature
@@ -28,7 +28,7 @@ struct WelcomeView: View {
                 Section {
                     ForEach(0..<supportedConversions.count) { index in
                         let tuple = supportedConversions[index]
-                    
+                        
                         NavigationLink(tag: tuple.1,
                                        selection: $navigatedItem,
                                        destination: { tuple.2 },
@@ -37,6 +37,7 @@ struct WelcomeView: View {
                     }
                 }
             }.navigationTitle("UnitConverter")
+            TemperatureConversionView() // Sets temperature view as the secondary view for SplitView devices (i.e. iPad or landscape iPhones).
         }
     }
 }
